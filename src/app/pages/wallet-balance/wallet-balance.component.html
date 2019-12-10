@@ -1,0 +1,25 @@
+<div class="container">
+	<h1 class="alignment">Wallet details</h1>
+<br><br>
+	<h4 class="alter">
+		<strong>Address:</strong>
+		<br><br>
+    <h5 id="change"> {{ walletAddress }}</h5>
+
+	</h4>
+<br>
+	<h3 class="alter">
+		<strong>Balance:</strong>
+		<br><br>
+    <h5 id="change1">{{ balance }}</h5>
+	</h3>
+
+	<hr>
+
+	<h1 class="alignment">Transactions</h1>
+	<p *ngIf="transactions.length === 0">This wallet has made no transactions (yet)</p>
+	<app-transactions-table
+		[transactions]="transactions"
+		*ngIf="transactions.length > 0"
+	></app-transactions-table>
+</div>
